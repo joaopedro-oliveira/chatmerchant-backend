@@ -25,6 +25,7 @@ import { CamisetasResolver } from "./resolvers/camisetas";
 import { Camisetas } from "./entities/Camisetas";
 
 const main = async () => {
+  
   const conn = await createConnection({
     type: "postgres",
     database: "ChatBot",
@@ -91,7 +92,7 @@ const main = async () => {
     }
   }
 
-  app.post("/", express.json(), function (req, res) {
+  app.post("https://chatbot-loja.herokuapp.com/", express.json(), function (req, res) {
     console.info(`\n\n>>>>>>> S E R V E R   A T I N G I D O <<<<<<<`);
     WebhookProcessing(req, res);
   });
